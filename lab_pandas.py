@@ -1,37 +1,3 @@
-import pandas as pd
-import numpy as np
-#CLOUD DATA
-""""
-def search(lat,lon,np_cloud):
-    for i in range(len(np_cloud)):
-        if (900 - i)/10 == lat:
-            for j in range(len(np_cloud[0])):
-                if (j - 1800)/10 == lon:
-                    return np_cloud[i][j]
-
-
-test_file = "C:/Users/Gleb/Desktop/rem.csv"
-df_cities = pd.read_csv(test_file,header=None)
-nmp_cities = df_cities.values.tolist()
-for n in range(1,13):
-    filename = "C:/Users/Gleb/Desktop/cloud_"+str(n)+".csv"
-    df_cloud = pd.read_csv(filename,delimiter=';',header=None)
-    nmp_cloud = df_cloud.values.tolist()
-    for k in nmp_cities:
-        cloud = search(k[0],k[1],nmp_cloud)
-        k.append(1-cloud)
-
-df = pd.DataFrame(nmp_cities)
-df.to_csv('cities_new.csv')
-"""
-file = "C:/Users/Gleb/Desktop/final_data.csv"
-df = pd.read_csv(file,delimiter=';')
-df_total = df.groupby("REGION")[['Total cost','AREA']].sum()
-df_count = df.groupby("REGION")['Total cost'].count()
-
-df_final = pd.merge(df_total,
-               df_count,how='inner',on='REGION')
-df_final.to_csv('regions.csv')
 #Задание 2
 """"
 import matplotlib.pyplot as plt
